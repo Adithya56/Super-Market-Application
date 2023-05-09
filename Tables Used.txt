@@ -1,0 +1,50 @@
+create table sm_CustomerDetails(
+	cname varchar(20),
+    cId varchar(10),
+    password varchar(15)
+);
+
+create table sm_OwnerDetails(
+	oname varchar(20),
+    oId varchar(10),
+    password varchar(15)
+);
+
+create table PurchaseDetails(
+    prod_id int,
+    batchno int,
+    qty int,
+    vendorid int,
+    dateofpurchase date DEFAULT CURRENT_DATE
+);
+
+create table SalesDetails(
+    sales_id int GENERATED ALWAYS AS IDENTITY,
+    prod_id int,
+    batchno int,
+    qty int,
+    c_id int,
+    dateofsale date DEFAULT CURRENT_DATE
+);
+
+create table sm_stock(
+    prod_id int,
+    batchno int,
+    stock int,
+);
+
+
+create table productDetails(
+ pid int,
+ batchno int,
+ p_name varchar(20),
+ p_category varchar(20),
+ costPrice numeric(10,5),
+ salePrice numeric(10,5),
+ gst numeric(10,5));
+
+ create table VendorDetails(
+ vendor_id int,
+ vendor_name varchar(20),
+ contactInfo int,
+ vendor_type varchar(20));
